@@ -5,6 +5,6 @@
   tasks:
     - name: copy war file into tomcat server
       copy:
-        src:
-        dest: 
+        src: /var/lib/jenkins/workspace/Declarative_pipeline/target/*.war
+        dest: /opt/tomcat-8.5.70/webapps/
       
