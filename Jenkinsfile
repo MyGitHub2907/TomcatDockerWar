@@ -1,6 +1,6 @@
 node
 {
-def mavenHome = tool name: "Maven3.8.1"
+def mavenHome = tool name: "Maven3.8.2"
     
     stage('checkout code')
     {
@@ -11,26 +11,22 @@ def mavenHome = tool name: "Maven3.8.1"
     {
         sh "${mavenHome}/bin/mvn clean package"
     }
-    stage('Execute SonarQube report')
-    {
-        sh "${mavenHome}/bin/mvn sonar:sonar"
-    }
     stage('upload artifact into nexus')
     {
         sh "${mavenHome}/bin/mvn clean deploy"
     }
     stage('Deploy to tomcat')
     {
-        sshagent(['94de8363-6497-40aa-a535-86e91f6d4807'])
+        sshagent(['1e245228-0f64-401b-a699-d7edf7533363'])
         {
-            sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@65.0.81.154:/opt/apache-tomcat-8.5.69/webapps"
+            sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@3.109.121.126:/opt/tomcat-8.5.70/webapps"
         }
     }
     stage('Email notification')
     {
-        mail bcc: '', body: '''Build is success..
+        mail bcc: '', body: '''build successfully deployed to tomcat.
 
-Regards,
-Bikash Ranjan Barik''', cc: '', from: '', replyTo: '', subject: 'Build report', to: 'barikrbikash26@gmail.com'
+        Regards,
+        Bikash''', cc: '', from: '', replyTo: '', subject: 'Build Success', to: 'barikrbikash26@gmail.com'
     }
 }
