@@ -1,9 +1,10 @@
-        
+---        
 - hosts: all
   become: true
-  become_user: root
   gather_facts: false
   tasks:
-    - include_role:
-        name: tomcat
+    - name: copy war file into tomcat server
+      copy:
+        src:
+        dest: 
       
