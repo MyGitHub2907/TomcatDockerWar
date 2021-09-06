@@ -17,7 +17,7 @@
     </plugins>
 </reporting>
   <properties>
-    <sonar.host.url>http://65.0.96.200:9000/</sonar.host.url>
+    <sonar.host.url>http://13.233.24.110:9000/</sonar.host.url>
     <sonar.login>1209027d42d4f0d5793c10b62066063e8030c40a</sonar.login>
   </properties>
   <dependencies>
