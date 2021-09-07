@@ -35,7 +35,12 @@ pipeline {
                sh "mvn clean deploy"
            }
       }
-      
+      stage('sonarQube scan'){
+           steps {
+               sh "mvn sonar:sonar"
+           }
+      }
+               
       stage('deploy'){
            steps {
                sh "ansible-playbook -i /etc/ansible/hosts --private-key=/home/admin/.ssh/id_rsa main.yml -u admin"
