@@ -17,7 +17,7 @@
     </plugins>
 </reporting>
   <properties>
-    <sonar.host.url>http://13.233.24.110:9000/</sonar.host.url>
+    <sonar.host.url>http://13.235.45.185:9000/</sonar.host.url>
     <sonar.login>admin</sonar.login>
     <sonar.password>admin@123</sonar.password>
 <!--
