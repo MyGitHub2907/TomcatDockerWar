@@ -36,13 +36,13 @@
       <repository>
         <id>nexus</id>
         <name>releases nexus repository</name>
-        <url>http://13.233.229.159:8081/repository/Freestyle-build-Release/</url>
+        <url>http://13.127.158.226:8081/repository/Freestyle-build-Release/</url>
       </repository>
       
       <snapshotRepository>
         <id>nexus</id>
         <name>snapshot nexus repository</name>
-        <url>http://13.233.229.159:8081/repository/Freestyle-build-Snapshot</url>
+        <url>http://13.127.158.226:8081/repository/Freestyle-build-Snapshot</url>
       </snapshotRepository>
     
   </distributionManagement>  
